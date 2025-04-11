@@ -1,7 +1,16 @@
-<app-navbar></app-navbar>
 
-<main class="container">
-    <router-outlet></router-outlet>
-</main>
+<div class="layout-container">
+    <header>
+        <app-navbar/>
+    </header>
+    <main class="container-fluid">
+        <section>
+            <router-outlet/>
+        </section>
+        <div class="h-fit">
+            <app-footer/>
+        </div>
+    </main>
+</div>
 
-<app-footer></app-footer>
+

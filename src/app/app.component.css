@@ -1,5 +1,21 @@
-.container {
+/* .container {
     max-width: 1200px;
     margin: auto;
     padding: 2rem;
+} */
+
+.layout-container{
+    @apply overflow-hidden h-screen w-screen grid grid-cols-12  grid-rows-12;
+}
+
+header{
+    @apply col-span-12 row-span-1 row-start-1 h-fit;
+}
+
+.container-fluid{
+    @apply col-span-12 pt-5 row-span-11 row-start-2 overflow-y-auto overflow-x-hidden flex flex-col;
+}
+
+section{
+    @apply flex-grow;
 }
