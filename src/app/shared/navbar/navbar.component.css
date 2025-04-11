@@ -24,6 +24,10 @@
     color: #ffd700;
 }
 
+.logo {
+    cursor: pointer;
+}
+
 .logo-img {
     height: 60px;
 }

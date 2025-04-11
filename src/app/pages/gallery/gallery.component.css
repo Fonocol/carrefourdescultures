@@ -1,33 +1,279 @@
+/* Conteneur principal de la galerie */
+
 .gallery {
-    padding: 2rem;
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
 }
+
+
+/* Titre de la galerie */
+
+.gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #007b5f;
+    border-bottom: 3px solid #ffcc00;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    animation: slideInFromLeft 1s ease-out;
+}
+
+
+/* Grille d'images */
 
 .grid-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Colonnes flexibles */
     gap: 1rem;
+    /* Espacement entre les images */
+    margin-top: 2rem;
+    animation: fadeInGrid 1s ease-out;
 }
+
+
+/* Carte image individuelle */
 
 .img-box {
     position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.img-box img {
+
+/* Image dans chaque carte */
+
+.gallery-img {
     width: 100%;
-    border-radius: 10px;
-    transition: transform 0.3s;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.img-box:hover img {
+
+/* Effet de survol sur l'image */
+
+.img-box:hover .gallery-img {
     transform: scale(1.05);
+    /* Zoom léger */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
+
+
+/* Légende de l'image */
 
 .caption {
     position: absolute;
-    bottom: 8px;
-    left: 10px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 0.3rem 0.6rem;
-    border-radius: 6px;
+    font-size: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0 0 8px 8px;
+}
+
+
+/* Légende visible au survol */
+
+.img-box:hover .caption {
+    opacity: 1;
+}
+
+
+/* Animation fade-in des images */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Animation des titres */
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Animation de la grille */
+
+@keyframes fadeInGrid {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Modale (Lightbox) améliorée */
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: zoom-out;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.lightbox img:hover {
+    transform: scale(1.02);
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-close:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+
+/* Animation d'ouverture */
+
+@keyframes lightboxFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.lightbox {
+    animation: lightboxFadeIn 0.3s ease-out;
+}
+
+
+/* Navigation dans le lightbox */
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-nav:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-nav.prev {
+    left: 20px;
+}
+
+.lightbox-nav.next {
+    right: 20px;
+}
+
+
+/* Pied de page du lightbox */
+
+.lightbox-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-counter {
+    font-weight: bold;
+}
+
+.image-caption {
+    flex-grow: 1;
+}
+
+
+/* Empêcher la sélection de texte pendant la navigation */
+
+.lightbox-content {
+    user-select: none;
 }
