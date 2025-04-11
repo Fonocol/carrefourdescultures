@@ -98,8 +98,28 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "carrefourdescultures:build:production",
+              "serveTarget": "carrefourdescultures:serve:production"
+            },
+            "development": {
+              "buildTarget": "carrefourdescultures:build:development",
+              "serveTarget": "carrefourdescultures:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

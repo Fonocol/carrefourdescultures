@@ -1,0 +1,9 @@
+<section class="gallery">
+    <h2>Galerie Photo</h2>
+    <div class="grid-gallery">
+        <div class="img-box" *ngFor="let photo of images">
+            <img [src]="photo.url" [alt]="photo.alt" title="image event">
+            <div class="caption">{{ photo.caption }}</div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+<section class="events">
+    <h2>🎉 Nos Événements</h2>
+
+    <div class="event-card" *ngFor="let event of events">
+        <div class="event-card-left">
+            <img [src]="event.flyer" alt="flyer événement">
+        </div>
+
+        <div class="event-card-right">
+            <h3>{{ event.title }}</h3>
+            <p><strong>Date :</strong> {{ event.date }}</p>
+            <p><strong>Description :</strong> {{ event.description }}</p>
+
+            <div class="activities" *ngIf="event.activities?.length">
+                <h4>📋 Programme :</h4>
+                <ul>
+                    <li *ngFor="let activity of event.activities">
+                        <strong>{{ activity.name }}</strong> – {{ activity.time }}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="partners" *ngIf="event.partners?.length">
+                <h4>🤝 Partenaires :</h4>
+                <ul>
+                    <li *ngFor="let partner of event.partners">{{ partner }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

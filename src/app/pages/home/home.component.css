@@ -1,0 +1,66 @@
+.home {
+    padding: 3rem 1rem;
+    background: linear-gradient(to right, #f0f4f8, #f0f4f8);
+    color: #333;
+    text-align: center;
+}
+
+.home-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.text-block {
+    max-width: 500px;
+}
+
+.text-block h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.text-block h1 span {
+    color: #007b5f;
+}
+
+.text-block p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.image-block img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.partners-socials h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #007b5f;
+}
+
+.logos,
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.logos img,
+.social-icons img {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img,
+.logos img:hover {
+    transform: scale(1.1);
+}

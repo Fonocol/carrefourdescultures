@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "carrefourdesculture": {
+      "hosting": {
+        "carrefourdescultures": [
+          "carrefourdesculture"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "carrefourdesculture"
+  }
+}

@@ -1,0 +1,21 @@
+.about-summary {
+    padding: 2rem;
+    background-color: #fff;
+    color: #222;
+    max-width: 800px;
+    margin: auto;
+}
+
+.about-summary h1 {
+    font-size: 2rem;
+    color: #007b5f;
+    margin-bottom: 1rem;
+    border-left: 5px solid #ffcc00;
+    padding-left: 0.8rem;
+}
+
+.about-summary p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
