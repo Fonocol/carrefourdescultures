@@ -9,7 +9,7 @@
 }
 
 header{
-    @apply col-span-12 row-span-1 row-start-1 h-fit;
+    @apply col-span-12 row-span-1 row-start-1;
 }
 
 .container-fluid{
