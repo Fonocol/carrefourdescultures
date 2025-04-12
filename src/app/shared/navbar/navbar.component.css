@@ -1,12 +1,17 @@
 .navbar {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     background-color: #007b5f;
     /*background-color: #111;*/
-    color: white;
+    /* color: white; */
     /* @apply h-full w-full */
+    @apply hidden sm:flex sm:justify-between sm:items-center p-4 bg-[#007b5f] text-white;
+}
+
+.mobile-navbar{
+    @apply flex sm:hidden justify-between items-center p-4 bg-[#007b5f] text-white;
 }
 
 .nav-links {
@@ -19,6 +24,10 @@
     color: white;
     text-decoration: none;
     font-weight: bold;
+}
+
+.cacher{
+    @apply hidden;
 }
 
 .nav-links a:hover {
