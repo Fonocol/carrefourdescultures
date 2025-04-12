@@ -5,6 +5,7 @@ import { EventsComponent } from './pages/events/events.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ActualitesComponent } from './pages/actualites/actualites.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'gallery', component: GalleryComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'actualites', component: ActualitesComponent },
   { path: '**', redirectTo: '' } // Redirection si URL non valide
 ];
 

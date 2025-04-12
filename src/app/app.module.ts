@@ -10,6 +10,8 @@ import { EventsComponent } from './pages/events/events.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ActualitesComponent } from './pages/actualites/actualites.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { ContactComponent } from './pages/contact/contact.component';
     EventsComponent,
     GalleryComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    ActualitesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

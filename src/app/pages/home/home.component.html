@@ -7,14 +7,25 @@
             </p>
         </div>
         <div class="image-block">
-            <img src="assets/event/home.jpg" alt="Accueil Carrefour des Cultures">
+            <div class="slideshow-container" [class.loaded]="imagesLoaded" (mousemove)="onMouseMove($event)">
+                <div *ngFor="let image of images; let i = index" class="slide" [class.active]="currentIndex === i" [style.background-image]="'url(' + image.url + ')'">
+                    <div class="slide-caption">{{ image.caption }}</div>
+                </div>
+                <div class="slideshow-controls">
+                    <button (click)="prevSlide()">❮</button>
+                    <div class="dots">
+                        <span *ngFor="let image of images; let i = index" [class.active]="currentIndex === i" (click)="goToSlide(i)"></span>
+                    </div>
+                    <button (click)="nextSlide()">❯</button>
+                </div>
+            </div>
         </div>
     </div>
 
     <section class="president-message">
         <div class="president-container">
             <div class="president-photo">
-                <img src="assets/presi.png" alt="Présidente Delphine Toviegbe">
+                <img src="assets/users/delphine.png" alt="Présidente Delphine Toviegbe">
             </div>
             <div class="president-text">
                 <h2>Mot de la Présidente</h2>
@@ -25,6 +36,7 @@
             </div>
         </div>
     </section>
+
     <div class="partners-socials">
         <h2>Nos Partenaires</h2>
         <div class="logos">
@@ -33,8 +45,6 @@
             <img src="assets/partners/bde.png" alt="BDE">
             <img src="assets/partners/uil.png" alt="UIL">
         </div>
-
-
 
         <h2>Suivez-nous</h2>
         <div class="social-icons">
@@ -49,7 +59,4 @@
             </a>
         </div>
     </div>
-
-
-
 </section>
