@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+toggleMenu() {
+throw new Error('Method not implemented.');
+}
+
+hidden: boolean = true;
 
 }

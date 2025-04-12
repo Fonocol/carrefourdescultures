@@ -14,3 +14,35 @@
         <li><a routerLink="/contact">Contact</a></li>
     </ul>
 </nav>
+
+<nav class="flex sm:hidden justify-between items-center bg-[#007b5f] text-white p-4">
+    <div class="nav-links">
+        <a class="logo" routerLink="/">
+            <img src="assets/logo.jpg" alt="logo" class="logo-img">
+        </a>
+
+    </div>
+    <div class=" flex items-center">
+        @if (hidden) {
+            <button (click)="hidden=!hidden" class="flex flex-col h-1/2 w-6 space-y-1" (click)="toggleMenu()">
+                <span class="h-1 bg-white"></span>
+                <span class="h-1 bg-white"></span>
+                <span class="h-1 bg-white"></span>
+            </button>
+        }
+        @else {
+            <button (click)="hidden=!hidden"  class="flex flex-col h-1/2 w-6" (click)="toggleMenu()">
+                <span class="h-1  -rotate-45 translate-y-2/3 bg-white"></span>
+                <span class="h-1 rotate-45 bg-white"></span>
+            </button>
+        }
+    </div>
+    <ul [class.cacher]="hidden" class="flex flex-col list-none absolute top-16 rounded-b-md bg-[#007b5f] px-3 right-0 mr-4 w-32  text-white justify-center">
+        <li (click)="hidden=!hidden" class="p-1"><a routerLink="/">Accueil</a></li>
+        <li (click)="hidden=!hidden" class="p-1"><a routerLink="/events">Événements</a></li>
+        <li (click)="hidden=!hidden" class="p-1"><a routerLink="/gallery">Galerie</a></li>
+        <li (click)="hidden=!hidden" class="p-1"><a routerLink="/actualites">Actualites</a></li>
+        <li (click)="hidden=!hidden" class="p-1"><a routerLink="/about">À Propos</a></li>
+        <li (click)="hidden=!hidden" class="p-1"><a routerLink="/contact">Contact</a></li>
+    </ul>
+</nav>
