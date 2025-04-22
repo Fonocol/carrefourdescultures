@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Member } from '../../interface/interfaces';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,50 @@ export class HomeComponent implements OnInit {
 
   baseUrl = 'assets/event/';
   images:any[]=[];
+  members: Member[] = [
+    {
+      name: 'Delphine Toviegbe',
+      title: 'Présidente',
+      photoUrl: 'assets/users/delphine.png',
+      message: 'Carrefour des Cultures n\'est pas qu\'une association. C\'est une aventure humaine, un lieu d\'ouverture où chaque culture trouve sa voix. Ensemble, construisons des ponts, pas des murs.'
+    },
+    {
+      name: 'Fono Colince',
+      title: 'Chargé des événements',
+      photoUrl: 'assets/users/colince.jpg',
+      message: 'Ce club, c’est mon laboratoire d’idées et mon terrain de jeu...'
+    },
+    {
+      name: 'Lamah Richard',
+      title: 'Chargé de communication',
+      photoUrl: 'assets/users/richard.jpg',
+      message: 'Carrefour des Cultures me pousse à raconter des histoires...'
+    },
+    {
+      name: 'Picasso',
+      title: 'Vice-président',
+      photoUrl: 'assets/users/picasso.png',
+      message: 'Être au Carrefour, c’est participer à une œuvre collective...'
+    },
+    {
+      name: 'Rémi Raoul',
+      title: 'Trésorier',
+      photoUrl: 'assets/users/remi.jpg',
+      message: 'Dans un monde de chiffres, Carrefour m’a montré le vrai capital...'
+    },
+    {
+      name: 'Marouan',
+      title: 'Chargé des relations extérieures',
+      photoUrl: 'assets/users/marouan.jpg',
+      message: 'Ce que je vis ici dépasse les simples échanges...'
+    },
+    {
+      name: 'OnionPOPO',
+      title: 'Membre Philosophe',
+      photoUrl: 'assets/users/image.png',
+      message: 'Ce club est une énigme vivante. On s’y cherche autant qu’on s’y trouve...'
+    }
+  ];
   
   currentIndex = 0;
   private slideInterval: any;
